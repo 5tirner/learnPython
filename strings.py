@@ -31,4 +31,11 @@ save = var.strip()
 print(save)
 save = var.replace('o', 'u')
 print(save)
-
+name = "Messi"
+age = 36
+all = f"The Great Player Is {name} Enev If He In {age}Yo"
+print(all)
+myAge = 23
+im = "Im {} now"
+print(im.format(myAge))
+print(bool(2))
