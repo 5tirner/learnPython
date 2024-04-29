@@ -58,3 +58,7 @@ a, b = "ABC", "ABD"
 print(compareStr(a, b))
 lista3 = lista2.copy()
 print(lista3[2:5])
+oneTwoThree = ["1", "2", "3"]
+
+(one, two, three) = oneTwoThree
+print(one, two, three)
