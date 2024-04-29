@@ -9,6 +9,7 @@ def ifNot(v):
 def sliceString(string, begin, end):
     return (string[begin:end])
 #----------------------------------#
+
 print("Hello My Name Is 'ALEGATOR'")
 var = """First,
 Second,
