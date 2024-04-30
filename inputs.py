@@ -1,3 +1,7 @@
+import json
+
+
+
 def printBoard():
     print("\n_______\n|F|F|F|\n-------")
     print("|F|F|F|\n-------")
@@ -16,6 +20,10 @@ def Winner(board):
         return 1
     elif board[0][2]==board[1][2] and board[0][2]==board[2][2] and board[0][2]==1:
         return 1
+    elif board[0][0]==board[1][1] and board[0][0]==board[2][2] and board[0][0]==1:
+        return 1
+    elif board[0][2]==board[1][1] and board[0][2]==board[2][0] and board[0][2]==1:
+        return 1
     if board[0][0]==board[0][1]and board[0][0]==board[0][2]and board[0][0]==2:
         return 2
     elif board[1][0]==board[1][1]and board[1][0]==board[1][2]and board[1][0]==2:
@@ -28,10 +36,15 @@ def Winner(board):
         return 2
     elif board[0][2]==board[1][2] and board[0][2]==board[2][2] and board[0][2]==2:
         return 2
+    elif board[0][0]==board[1][1] and board[0][0]==board[2][2] and board[0][0]==2:
+        return 2
+    elif board[0][2]==board[1][1] and board[0][2]==board[2][0] and board[0][2]==2:
+        return 2
     return 0
 
 name1 = input("Enter Player1 Name: ")
 name2 = input("Enter Player2 Name: ")
+
 try:
     ### Check The PLayers Name
     if name1 == "" or name2 == "":
@@ -113,7 +126,11 @@ try:
     print("The Board:")
     for j in board:
         print(j)
-
+    save1 = json.dumps(player1, indent=1, sort_keys=True)
+    save2 = json.dumps(player2, indent=1, sort_keys=True)
+    # print(save1)
+    # print("____________________________________________________")
+    # print(save2)
 except Exception as err:
     print(f"{err}")
 finally:
