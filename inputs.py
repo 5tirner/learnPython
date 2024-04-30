@@ -6,17 +6,30 @@ def printBoard():
 def Winner(board):
     if board[0][0]==board[0][1]and board[0][0]==board[0][2]and board[0][0]==1:
         return 1
-    elif board[1][0]==board[1][1]and board[1][0]==board[1][2]and board[0][0]==1:
+    elif board[1][0]==board[1][1]and board[1][0]==board[1][2]and board[1][0]==1:
         return 1
-    elif board[2][0]==board[2][1]and board[2][0]==board[2][2]and board[0][0]==1:
+    elif board[2][0]==board[2][1]and board[2][0]==board[2][2]and board[2][0]==1:
+        return 1
+    elif board[0][0]==board[1][0] and board[0][0]==board[2][0] and board[0][0]==1:
+        return 1
+    elif board[0][1]==board[1][1] and board[0][1]==board[2][1] and board[0][1]==1:
+        return 1
+    elif board[0][2]==board[1][2] and board[0][2]==board[2][2] and board[0][2]==1:
         return 1
     if board[0][0]==board[0][1]and board[0][0]==board[0][2]and board[0][0]==2:
         return 2
-    elif board[1][0]==board[1][1]and board[1][0]==board[1][2]and board[0][0]==2:
+    elif board[1][0]==board[1][1]and board[1][0]==board[1][2]and board[1][0]==2:
         return 2
-    elif board[2][0]==board[2][1]and board[2][0]==board[2][2]and board[0][0]==2:
+    elif board[2][0]==board[2][1]and board[2][0]==board[2][2]and board[2][0]==2:
+        return 2
+    elif board[0][0]==board[1][0] and board[0][0]==board[2][0] and board[0][0]==2:
+        return 2
+    elif board[0][1]==board[1][1] and board[0][1]==board[2][1] and board[0][1]==2:
+        return 2
+    elif board[0][2]==board[1][2] and board[0][2]==board[2][2] and board[0][2]==2:
         return 2
     return 0
+
 name1 = input("Enter Player1 Name: ")
 name2 = input("Enter Player2 Name: ")
 try:
@@ -83,20 +96,21 @@ try:
             board[1][int(place) - 4] = symbol
         else:
             board[2][int(place) - 7] = symbol
+        res = Winner(board)
+        if res == 1:
+            print(f"\n\nThe Winner Is: `{name1}`\n\n")
+            break
+        elif res == 2:
+            print(f"\n\nThe Winner Is: `{name2}`\n\n")
+            break
         i += 1
-    res = Winner(board)
-    print("\n\n______________________________________________")
-    if res == 0:
-        print ("The Game End With Draw, Good Job")
-    elif res == 1:
-        print (f"{name1} The Winner!")
-    else:
-        print (f"{name2} The Winner!")
-    print("______________________________________________")
+    if i == 9:
+        print("\n\nThe Game End With DRAW!\n")
+    ### Game Status
     print("Status:")
     print(f"Player1: {player1}")
     print(f"Player2: {player2}")
-    print("The Board")
+    print("The Board:")
     for j in board:
         print(j)
 
