@@ -3,6 +3,6 @@ import numpy
 window.title("Random Choice")
 window.xlabel("Horizontal")
 window.ylabel("Vertical")
-numbers = numpy.random.normal(100, 10, 164)
-window.hist(numbers)
+x = [1,2,3,4,5,6,7,8,9,1,1,3,3,3,3,3,3,10]
+window.hist(x)
 window.show()
